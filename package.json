@@ -2,6 +2,6 @@
   "name": "my-package",
   "version": "1.0.0",
   "scripts": {
-     "start": "some command to be run"
+     "start": "node ./app.js"
   }
 }
