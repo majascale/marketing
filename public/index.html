@@ -9,6 +9,17 @@
   <h3>Configuration JSON</h3>
   <textarea id="configuration"></textarea>
 
+  <div id="step1" class="step">
+      <label for="messageType">Message Type:</label>
+      <select id="messageType">
+        <option value="smsMessage">SMS</option>
+        <option value="viberMessage">VIBER</option>
+      </select>
+      <br><br>
+      <label for="smsText">Message Text:</label>
+      <input type="text" id="smsText">
+  </div>
+  
   <script src="postmonger.js"></script>
   <script src="activity.js"></script>
 
