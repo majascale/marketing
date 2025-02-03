@@ -1,0 +1,144 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+      "icon": "icon.png",
+      "category": "custom"
+    },
+    "type": "REST",
+    "lang": {
+      "en-US": {
+        "name": "Link Mobility",
+        "description": "Send SMS/VIBER message toward Link Mobility."
+      }
+    },
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "msisdn": "38977772032"
+          },
+          {
+            "text": "Hardcoded text for now, but should be configured"
+          },
+          {
+            "sc": "1990"
+          },
+          {
+            "service_id": "2724"
+          }
+        ],
+        "outArguments": [
+          {
+            "meta": ""
+          },
+          {
+            "data": ""
+          }
+        ],
+        "timeout": 20000,
+        "retryCount": 0,
+        "retryDelay": 1000,
+        "concurrentRequests": 6,
+        "url": "https://api-test.msghub.cloud/send"
+      }
+    },
+    "configurationArguments": {
+  
+      "save": {
+        "url": "https://server6.webhostmost.com:2222/evo/user/filemanager/files?path=/domains/linkmobmaja.com/custom/save"
+      },
+      "publish": {
+        "url": "https://server6.webhostmost.com:2222/evo/user/filemanager/files?path=/domains/linkmobmaja.com/custom/publish"
+      },
+      "validate": {
+        "url": "https://server6.webhostmost.com:2222/evo/user/filemanager/files?path=/domains/linkmobmaja.com/custom/validate"
+      },
+      "stop": {
+        "url": "https://server6.webhostmost.com:2222/evo/user/filemanager/files?path=/domains/linkmobmaja.com/custom/stop"
+      }
+    },
+
+    "wizardSteps": [
+      { "label": "Message Type", "key": "step1" }
+    ],
+
+    "userInterfaces": {
+      "configModal": {
+        "height": 200,
+        "width": 300,
+        "fullscreen": true
+      }
+    },
+    "schema": {
+      "arguments": {
+        "execute": {
+          "inArguments": [
+            {
+              "msisdn": {
+                "dataType": "Phone",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "text": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "sc": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "service_id": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            }
+          ],
+          "outArguments": [
+            {
+               "meta":
+                 {
+                  "code": {
+                     "dataType": "Text",
+                     "direction": "out",
+                     "access": "visible"
+                  },
+                  "text": {
+                     "dataType": "Text",
+                     "direction": "out",
+                     "access": "visible"
+                  }
+                 },
+               "data":
+                 {
+                  "msg_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                  },
+                 "sms_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                 },
+                 "request_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                 }
+                }
+            }
+
+          ]
+        }
+      }
+    }
+  }
