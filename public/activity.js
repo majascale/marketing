@@ -37,6 +37,6 @@ connection.on('initActivity', function( data ) {
 // Save Sequence
 connection.on('clickedNext', function() {
   var sms = JSON.parse( document.getElementById( 'smsText' ).value );
-  console.log('SMS: " + sms);
+  console.log('SMS: ' + sms);
   connection.trigger('updateActivity', sms);
 });
