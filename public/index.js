@@ -1,3 +1,7 @@
 function isViberMessage() {
-   document.getElementById("viberType").hidden = true;
+   if (document.getElementById("messageType").innerHTML == 'viber') {
+      document.getElementById("viberType").hidden = true;
+   }else{
+      document.getElementById("viberType").hidden = false;
+   }
 }
