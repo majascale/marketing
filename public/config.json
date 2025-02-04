@@ -9,5 +9,108 @@
     "configInspector": {
       "size": "medium"
     }
-  }
+  },
+  "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "msisdn": "38977772032"
+          },
+          {
+            "text": "Hardcoded text for now, but should be configured"
+          },
+          {
+            "sc": "1990"
+          },
+          {
+            "service_id": "2724"
+          }
+        ],
+        "outArguments": [
+          {
+            "meta": ""
+          },
+          {
+            "data": ""
+          }
+        ],
+        "timeout": 20000,
+        "retryCount": 0,
+        "retryDelay": 1000,
+        "concurrentRequests": 6,
+        "url": "https://api-test.msghub.cloud/send"
+      }
+    },
+      "schema": {
+      "arguments": {
+        "execute": {
+          "inArguments": [
+            {
+              "msisdn": {
+                "dataType": "Phone",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "text": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "sc": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            },
+            {
+              "service_id": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "in"
+              }
+            }
+          ],
+          "outArguments": [
+            {
+               "meta":
+                 {
+                  "code": {
+                     "dataType": "Text",
+                     "direction": "out",
+                     "access": "visible"
+                  },
+                  "text": {
+                     "dataType": "Text",
+                     "direction": "out",
+                     "access": "visible"
+                  }
+                 },
+               "data":
+                 {
+                  "msg_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                  },
+                 "sms_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                 },
+                 "request_id": {
+                    "dataType": "Text",
+                    "direction": "out",
+                    "access": "visible"
+                 }
+                }
+            }
+
+          ]
+        }
+      }
+    }
 }
