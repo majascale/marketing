@@ -9,19 +9,21 @@
   <h4>Configuration</h4>
   <div id="step1" class="step">
       <label for="messageType">Message Type</label>
-      <select id="messageType" onChange="hideViberSection()">
+      <select id="messageType" onChange="setViberSectionVisibility()">
         <option value="none"></option>
         <option value="sms">SMS</option>
         <option value="viber">VIBER</option>
       </select>
       <br><br>
-      <label for="viberType">Viber Message Type</label>
-      <select id="viberType">
-        <option value="text">Text</option>
-        <option value="file">File</option>
-        <option value="video">Video</option>
-         <option value="text&video">Text & Video</option>
-      </select>
+     <div id="viberSection" hidden> 
+        <label for="viberType">Viber Message Type</label>
+        <select id="viberType" label="Viber Message Type">
+          <option value="text">Text</option>
+          <option value="file">File</option>
+          <option value="video">Video</option>
+          <option value="text&video">Text & Video</option>
+        </select>
+      </div>
       <br><br>
       <label for="smsText">Text</label>
       <input type="text" id="smsText" required>
