@@ -29,7 +29,8 @@ connection.on('initActivity', function( data ) {
         }
       });
     });
-    $("#smsText").html(smsText);
+    //$("#smsText").html(smsText);
+    document.getElementById( 'smsText' ).value = smsText;
 });
 
 // Save Sequence
