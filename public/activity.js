@@ -7,8 +7,12 @@ connection.on('initActivity', function( data ) {
     if (data) {
        payload = data;
     }
-    document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
+    //document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
+    const json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
+    const obj = JSON.parse(json);
+    document.getElementById( 'smsText' ).value = obj.text;
 
+console.log(obj.text);
    /* var smsText;
     var hasInArguments = Boolean(
       payload["arguments"] &&
