@@ -7,12 +7,9 @@ connection.on('initActivity', function( data ) {
     if (data) {
        payload = data;
     }
-    //document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
-    if (data) {
-      payload = data;
-    }
+    document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
 
-    var smsText;
+   /* var smsText;
     var hasInArguments = Boolean(
       payload["arguments"] &&
         payload["arguments"].execute &&
@@ -30,11 +27,11 @@ connection.on('initActivity', function( data ) {
       });
     });
     //$("#smsText").html(smsText);
-    document.getElementById( 'smsText' ).value = smsText;
+    document.getElementById( 'smsText' ).value = smsText;*/
 });
 
 // Save Sequence
 connection.on('clickedNext', function() {
-  var smsText = JSON.parse( document.getElementById( 'smsText' ).value );
-  connection.trigger('updateActivity', smsText);
+  var sms = JSON.parse( document.getElementById( 'smsText' ).value );
+  connection.trigger('updateActivity', sms);
 });
