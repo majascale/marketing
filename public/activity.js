@@ -12,7 +12,7 @@ connection.on('initActivity', function( data ) {
     const obj = JSON.parse(json);
     document.getElementById( 'smsText' ).value = obj.text;
 
-console.log(obj.text);
+
    /* var smsText;
     var hasInArguments = Boolean(
       payload["arguments"] &&
@@ -37,5 +37,6 @@ console.log(obj.text);
 // Save Sequence
 connection.on('clickedNext', function() {
   var sms = JSON.parse( document.getElementById( 'smsText' ).value );
+  console.log('SMS: " + sms);
   connection.trigger('updateActivity', sms);
 });
