@@ -16,6 +16,15 @@ connection.on('initActivity', function( data ) {
             payload['arguments'].execute.inArguments.length > 0
         );
       var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+        $.each(inArguments, function (index, inArgument) {
+          $.each(inArgument, function (key, val) {
+                if (key === 'text') {
+                    //contactKey = val;
+                    console.log("TextVal:" + val);
+                    //document.getElementById( 'smsText' ).value = val;
+                }            
+            });
+        }); 
       console.log("inArguments:" + inArguments);  
     }
 });
