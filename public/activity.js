@@ -4,8 +4,7 @@ var payload = {};
 connection.trigger('ready');
 
 connection.on('initActivity', function( data ) {
-  console.log('Data: ' + data);
-  //document.getElementById( 'smsText' ).value = JSON.stringify( data, null, 2 );
+  document.getElementById( 'smsText' ).value = JSON.stringify( data, null, 2 );
   if (data) {
       payload = data;
   }
