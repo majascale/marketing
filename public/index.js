@@ -1,5 +1,10 @@
-function hideViberSection() {
-   var select = document.getElementById('messageType');
-   var option = select.options[select.selectedIndex];
-   console.log(option.value);
+function setViberSectionVisibility() {
+       var select = document.getElementById('messageType');
+       var value = select.options[select.selectedIndex].value;
+       console.log(value);
+       if(value === 'viber'){
+         document.getElementById('viberSection').hidden = false;
+       }else{
+         document.getElementById('viberSection').hidden = true;
+       }
 }
