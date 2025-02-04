@@ -7,7 +7,7 @@ connection.on('initActivity', function( data ) {
     if (data) {
        payload = data;
     }
-    document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1].val, null, 2 );
+    document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments[1].value, null, 2 );
 });
 
 // Save Sequence
