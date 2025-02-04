@@ -16,6 +16,7 @@ connection.on('initActivity', function( data ) {
             payload['arguments'].execute.inArguments.length > 0
         );
       var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+       console.log("inArguments:" + inArguments); 
         $.each(inArguments, function (index, inArgument) {
           $.each(inArgument, function (key, val) {
               console.log("TextKey:" + key);
