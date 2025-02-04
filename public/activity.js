@@ -8,7 +8,7 @@ connection.on('initActivity', function( data ) {
        payload = data;
        //document.getElementById( 'smsText' ).value = JSON.stringify( payload, null, 2 );
        document.getElementById( 'smsText' ).value = JSON.stringify(payload.arguments.execute.inArguments, null, 2 );
-       //var inArguments = JSON.stringify(payload.arguments.execute.inArguments, null, 2 );
+       
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -18,11 +18,12 @@ connection.on('initActivity', function( data ) {
       var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
         $.each(inArguments, function (index, inArgument) {
           $.each(inArgument, function (key, val) {
-                if (key === 'text') {
+              console.log("TextKey:" + key);
+               console.log("TextVal:" + val);
+               // if (key === 'text') {
                     //contactKey = val;
-                    console.log("TextVal:" + val);
                     //document.getElementById( 'smsText' ).value = val;
-                }            
+               // }            
             });
         }); 
       console.log("inArguments:" + inArguments);  
