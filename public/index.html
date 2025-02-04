@@ -11,11 +11,11 @@
       <label for="messageType">Message Type</label>
       <select id="messageType" onChange="setViberSectionVisibility()">
         <option value="none"></option>
-        <option value="sms">SMS</option>
+        <option value="sms" selected>SMS</option>
         <option value="viber">VIBER</option>
       </select>
       <br><br>
-      <div id="smsSection" hidden> 
+      <div id="smsSection"> 
         <label for="smsText">Text</label>
         <input type="text" id="smsText" required>
       </div>
