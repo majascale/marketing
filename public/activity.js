@@ -4,8 +4,10 @@ var payload = {};
 connection.trigger('ready');
 
 connection.on('initActivity', function( data ) {
-  document.getElementById( 'smsText' ).value = JSON.stringify( data, null, 2 );
-
+    if (data) {
+       payload = data;
+       document.getElementById( 'smsText' ).value = JSON.stringify( payload, null, 2 );
+    }
 });
 
 // Save Sequence
