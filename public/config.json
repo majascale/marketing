@@ -26,14 +26,7 @@
             "service_id": "2724"
           }
         ],
-        "outArguments": [
-          {
-            "meta": ""
-          },
-          {
-            "data": ""
-          }
-        ],
+        "outArguments": [],
         "timeout": 20000,
         "retryCount": 0,
         "retryDelay": 1000,
