@@ -28,12 +28,8 @@ connection.on('clickedNext', function() {
   const crypto = require('crypto');
   const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   let hmac = crypto.createHmac('sha512', secret);
-  let msg = '    
-      "msisdn": "38977772032",
-      "sc": "1990",
-      "text": "Test message!",
-      "service_id": "2724"
-      ';
+  //let msg = ' "msisdn": "38977772032", "sc": "1990", "text": "Test message!","service_id": "2724" ';
+  let msg = 'GeeksforGeeks';
   hmac.update(msg);
   let hash = hmac.digest('hex');        
   console.log(hash); 
