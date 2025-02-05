@@ -18,6 +18,6 @@ connection.on('clickedNext', function() {
   //to be checked here Unexpected token 'H', "Hardcoded text1" is not valid JSON var sms = JSON.parse( document.getElementById( 'smsText' ).value );
  var sms = document.getElementById( 'smsText' ).value;
   console.log('SMS: ' + sms);
-  console.log('Payload: ' + payload);
+  console.log('Payload: ' + JSON.stringify(payload,null,2));
   connection.trigger('updateActivity', sms);
 });
