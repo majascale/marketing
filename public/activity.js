@@ -16,8 +16,12 @@ connection.on('initActivity', function( data ) {
 // Save Sequence
 connection.on('clickedNext', function() {
   //to be checked here Unexpected token 'H', "Hardcoded text1" is not valid JSON var sms = JSON.parse( document.getElementById( 'smsText' ).value );
- var sms = document.getElementById( 'smsText' ).value;
+  var sms = document.getElementById( 'smsText' ).value;
   console.log('SMS: ' + sms);
   console.log('Payload: ' + JSON.stringify(payload,null,2));
+  var jsonObj = JSON.stringify(payload,null,2);
+  console.log('JsonObj-Before: ' + jsonObj);  
+  jsonObj.arguments.execute.inArguments[1].text = sms;
+  console.log('JsonObj-After: ' + jsonObj);   
   connection.trigger('updateActivity', sms);
 });
