@@ -11,27 +11,6 @@ connection.on('initActivity', function( data ) {
     const json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
     const obj = JSON.parse(json);
     document.getElementById( 'smsText' ).value = obj.text;
-
-
-   /* var smsText;
-    var hasInArguments = Boolean(
-      payload["arguments"] &&
-        payload["arguments"].execute &&
-        payload["arguments"].execute.inArguments &&
-        payload["arguments"].execute.inArguments.length > 0
-    );
-
-    var inArguments = hasInArguments ? payload["arguments"].execute.inArguments: {}; 
-
-    $.each(inArguments, function (index, inArgument) {
-      $.each(inArgument, function (key, val) {
-        if (key === "text") {
-          smsText = val;
-        }
-      });
-    });
-    //$("#smsText").html(smsText);
-    document.getElementById( 'smsText' ).value = smsText;*/
 });
 
 // Save Sequence
@@ -39,5 +18,6 @@ connection.on('clickedNext', function() {
   //to be checked here Unexpected token 'H', "Hardcoded text1" is not valid JSON var sms = JSON.parse( document.getElementById( 'smsText' ).value );
  var sms = document.getElementById( 'smsText' ).value;
   console.log('SMS: ' + sms);
+  console.log('Payload: ' + payload);
   connection.trigger('updateActivity', sms);
 });
