@@ -28,9 +28,6 @@
         ],
         "outArguments": [],
         "timeout": 20000,
-        "retryCount": 0,
-        "retryDelay": 1000,
-        "concurrentRequests": 6,
         "url": "https://api-test.msghub.cloud/send"
       }
     },
