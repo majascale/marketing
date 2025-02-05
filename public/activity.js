@@ -23,4 +23,5 @@ connection.on('clickedNext', function() {
   payload.arguments.execute.inArguments[1].text = sms; 
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
+  //generate the signature part and update Conf
 });
