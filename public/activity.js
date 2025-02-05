@@ -21,7 +21,7 @@ connection.on('clickedNext', function() {
   console.log('Payload: ' + JSON.stringify(payload,null,2));
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('JsonObj-Before: ' + jsonObj);  
-  jsonObj.arguments.execute.inArguments[1].text = sms;
-  console.log('JsonObj-After: ' + jsonObj);   
+  //jsonObj.arguments.execute.inArguments[1].text = sms;
+  console.log('JsonObj-After: ' + jsonObj.arguments.execute.inArguments[1]);   
   connection.trigger('updateActivity', sms);
 });
