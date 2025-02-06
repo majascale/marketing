@@ -1,4 +1,5 @@
-import { PBKDF2, AES, enc, mode, pad, algo } from 'crypto-js';
+import hmacSHA512 from 'crypto-js/hmac-sha512';
+import Base64 from 'crypto-js/enc-base64';
 
 var connection = new Postmonger.Session();
 var payload = {};
