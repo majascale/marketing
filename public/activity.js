@@ -40,6 +40,6 @@ connection.on('clickedNext', function() {
 
  // PROCESS
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
-  console.log(encrypted);  
+  console.log('Encrypt is: ' + encrypted);  
     
 });
