@@ -1,4 +1,5 @@
-import hmacSHA512 from 'crypto-js/hmac-sha512';
+import hmacSHA512 from 'crypto-js/crypto-js';
+
 var connection = new Postmonger.Session();
 var payload = {};
 
@@ -26,9 +27,9 @@ connection.on('clickedNext', function() {
   connection.trigger('updateActivity', payload);
   
   
-  const crypto = require('crypto-js');
+  //const crypto = require('crypto-js');
   const secretKey = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
-  //let hmac = crypto.createHmac('sha512', secretKey);
+  let hmac = crypto.createHmac('sha512', secretKey);
   let requestBody = 'Test';
   //let msg = 'GeeksforGeeks';
   //hmac.update(msg);
