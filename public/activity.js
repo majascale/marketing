@@ -26,7 +26,7 @@ connection.on('clickedNext', function() {
   connection.trigger('updateActivity', payload);
   
   
-  //const crypto = require('crypto-js');
+  const crypto = require('crypto-js');
   const secretKey = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   //let hmac = crypto.createHmac('sha512', secretKey);
   let requestBody = 'Test';
@@ -35,14 +35,14 @@ connection.on('clickedNext', function() {
   //let hash = hmac.digest('hex');        
   //console.log(hash); 
 
- var myString   = "blablabla Card game bla";
- var myPassword = "myPassword";
- var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
+ //var myString   = "blablabla Card game bla";
+ //var myPassword = "myPassword";
+ //var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
 // var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();  
- var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA512, secretKey);
+ //var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA512, secretKey);
  //hmac.update("Test");
  //var hash = hmac.finalize();   
- console.log('Encrypt is: ' + encrypted); 
+ //console.log('Encrypt is: ' + encrypted); 
  //console.log('Hash is: ' + hash);    
  
 //var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
