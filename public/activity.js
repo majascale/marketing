@@ -28,7 +28,7 @@ connection.on('clickedNext', function() {
   
   //const crypto = require('crypto-js');
   const secretKey = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
-  //let hmac = crypto.createHmac('sha512', secret);
+  //let hmac = crypto.createHmac('sha512', secretKey);
   let requestBody = 'Test';
   //let msg = 'GeeksforGeeks';
   //hmac.update(msg);
@@ -38,9 +38,12 @@ connection.on('clickedNext', function() {
  var myString   = "blablabla Card game bla";
  var myPassword = "myPassword";
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
- var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();   
+ //var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();  
+ var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, "Secret Passphrase");
+ hmac.update("Test");
+ var hash = hmac.finalize();   
  console.log('Encrypt is: ' + encrypted); 
- console.log('HmacDigest is: ' + hmacDigest);    
+ console.log('Hash is: ' + hash);    
  
 //var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
  
