@@ -1,4 +1,4 @@
-
+import hmacSHA512 from 'crypto-js/hmac-sha512';
 var connection = new Postmonger.Session();
 var payload = {};
 
