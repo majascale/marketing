@@ -25,7 +25,7 @@ connection.on('clickedNext', function() {
   connection.trigger('updateActivity', payload);
   
   // ... in Testing
-  const crypto = require('crypto');
+  const crypto = require('crypto-js');
   const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   let hmac = crypto.createHmac('sha512', secret);
   //let msg = ' "msisdn": "38977772032", "sc": "1990", "text": "Test message!","service_id": "2724" ';
