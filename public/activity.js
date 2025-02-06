@@ -1,4 +1,4 @@
-import { PBKDF2, AES, enc, mode, pad, algo } from 'crypto-js';
+//import { PBKDF2, AES, enc, mode, pad, algo } from 'crypto-js';
 
 var connection = new Postmonger.Session();
 var payload = {};
@@ -26,9 +26,9 @@ connection.on('clickedNext', function() {
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
   
-  // ... in Testing
+  
   //const crypto = require('crypto-js');
-  //var CryptoJS = require("crypto-js/core");  
+  var CryptoJS = require("/nodebox/node_modules/.store/crypto-js@3.1.5/node_modules/crypto-js/core");  
   //const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   //let hmac = crypto.createHmac('sha512', secret);
   //let msg = ' "msisdn": "38977772032", "sc": "1990", "text": "Test message!","service_id": "2724" ';
