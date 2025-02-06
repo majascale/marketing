@@ -39,7 +39,7 @@ connection.on('clickedNext', function() {
  var myPassword = "myPassword";
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
 // var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();  
- //var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secretKey);
+ var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA512, secretKey);
  //hmac.update("Test");
  //var hash = hmac.finalize();   
  console.log('Encrypt is: ' + encrypted); 
