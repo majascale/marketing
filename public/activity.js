@@ -40,7 +40,8 @@ connection.on('clickedNext', function() {
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
  console.log('Encrypt is: ' + encrypted);  
  
-var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
+//var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
+ var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey);   
  console.log('HmacDigest is: ' + hmacDigest);     
     
 });
