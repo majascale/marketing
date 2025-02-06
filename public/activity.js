@@ -27,9 +27,9 @@ connection.on('clickedNext', function() {
   
   
   //const crypto = require('crypto-js');
-  //const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
+  const secretKey = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   //let hmac = crypto.createHmac('sha512', secret);
-  //let msg = ' "msisdn": "38977772032", "sc": "1990", "text": "Test message!","service_id": "2724" ';
+  let requestBody = 'Test 1';
   //let msg = 'GeeksforGeeks';
   //hmac.update(msg);
   //let hash = hmac.digest('hex');        
@@ -37,9 +37,10 @@ connection.on('clickedNext', function() {
 
  var myString   = "blablabla Card game bla";
  var myPassword = "myPassword";
-
- // PROCESS
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
-  console.log('Encrypt is: ' + encrypted);  
+ console.log('Encrypt is: ' + encrypted);  
+ 
+var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
+ console.log('HmacDigest is: ' + hmacDigest);     
     
 });
