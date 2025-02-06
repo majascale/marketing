@@ -27,13 +27,19 @@ connection.on('clickedNext', function() {
   
   
   //const crypto = require('crypto-js');
-  const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
+  //const secret = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   //let hmac = crypto.createHmac('sha512', secret);
   //let msg = ' "msisdn": "38977772032", "sc": "1990", "text": "Test message!","service_id": "2724" ';
   //let msg = 'GeeksforGeeks';
   //hmac.update(msg);
   //let hash = hmac.digest('hex');        
   //console.log(hash); 
-  console.log('end');  
+
+ var myString   = "blablabla Card game bla";
+ var myPassword = "myPassword";
+
+ // PROCESS
+ var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
+  console.log(encrypted);  
     
 });
