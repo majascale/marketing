@@ -1,6 +1,7 @@
 {
   "name": "jb-activity",
   "version": "0.0.1",
+   "type": "module",
   "engines": {
     "node": "10.x"
   },
