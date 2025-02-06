@@ -29,7 +29,7 @@ connection.on('clickedNext', function() {
   //const crypto = require('crypto-js');
   const secretKey = '$2y$10$DHkc4KUis70s57hQvBPrfOBlbj.tonKXniTjUBpArymaVqOXxgcn.';
   //let hmac = crypto.createHmac('sha512', secret);
-  let requestBody = 'Test 1';
+  let requestBody = 'Test';
   //let msg = 'GeeksforGeeks';
   //hmac.update(msg);
   //let hash = hmac.digest('hex');        
@@ -38,10 +38,12 @@ connection.on('clickedNext', function() {
  var myString   = "blablabla Card game bla";
  var myPassword = "myPassword";
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
- console.log('Encrypt is: ' + encrypted);  
+ var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();   
+ console.log('Encrypt is: ' + encrypted); 
+ console.log('HmacDigest is: ' + hmacDigest);    
  
 //var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey).toString(CryptoJS.digest);
- var hmacDigest = CryptoJS.HmacSHA512(requestBody, secretKey);   
- console.log('HmacDigest is: ' + hmacDigest);     
+ 
+     
     
 });
