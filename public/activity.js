@@ -38,7 +38,7 @@ connection.on('clickedNext', function() {
  var myString   = "blablabla Card game bla";
  var myPassword = "myPassword";
  var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
- var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();  
+// var hmacTest = CryptoJS.HmacSHA512(requestBody, secretKey).toString();  
  //var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secretKey);
  //hmac.update("Test");
  //var hash = hmac.finalize();   
