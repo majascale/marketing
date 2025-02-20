@@ -16,3 +16,9 @@ function setSectionVisibility() {
            document.getElementById('viberSection').hidden = true;
        }
 }
+function setViberSectionVisibility(){
+       var select = document.getElementById('messageType');
+       var value = select.options[select.selectedIndex].value;
+       console.log(value);
+       switch(value) {}
+}
