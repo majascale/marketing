@@ -19,7 +19,6 @@
         <label for="smsText">Text</label>
         <input type="text" id="smsText" required>
       </div>
-      
       <div id="viberSection" hidden> 
         <label for="viberType">Viber Message Type</label>
         <select id="viberType" onChange="setViberSectionVisibility()">
@@ -29,6 +28,14 @@
           <option value="video">Video</option>
           <option value="text+video">Text & Video</option>
         </select>
+        <div id="viberTextSection" hidden> 
+           <input type="text" id="viberText" label ="Text" required>
+           <input type="text" id="fallbackText" label ="Fallback"> 
+           <input type="text" id="platformText" label ="Platform">
+           <input type="text" id="buttonName" label ="Button Name">
+           <input type="text" id="buttonUrl" label ="Button URL">
+           <input type="text" id="imageUrl" label ="Image URL">
+        </div>
       </div>
       <br><br>
   </div>
