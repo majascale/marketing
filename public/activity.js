@@ -9,7 +9,7 @@ connection.on('initActivity', function( data ) {
        payload = data;
     }
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
-    console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments.type,null,2));
+    //console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments.type,null,2));
     //const json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
     //const obj = JSON.parse(json);
     //document.getElementById( 'smsText' ).value = obj.text;
