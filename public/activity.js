@@ -31,8 +31,9 @@ connection.on('clickedNext', function() {
                 "type": "sms",
                 "msisdn": smsMsisdn,
                 "text": smsText,
-            }
-    ];  
+            }  
+  ];  
+  payload['arguments'].execute.retryCount = 3; 
   //payload.arguments.execute.inArguments[1].text = sms; 
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
