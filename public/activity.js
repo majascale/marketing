@@ -22,8 +22,16 @@ connection.on('clickedNext', function() {
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
+  /*payload['arguments'].execute.inArguments = [
+            {
+                "type": "sms",
+                "msisdn": "{{Contact.Attribute.Age}}",
+                "text": "{{Contact.Attribute.Country}}",
+            }
+    ];*/  
   //payload.arguments.execute.inArguments[1].text = sms; 
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
-  //connection.trigger('updateActivity', payload);
+  connection.trigger('updateActivity', payload);
+  console.log('Update Done');  
       
 });
