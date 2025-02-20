@@ -17,8 +17,18 @@ function setSectionVisibility() {
        }
 }
 function setViberSectionVisibility(){
-       var select = document.getElementById('messageType');
+       var select = document.getElementById('viberType');
        var value = select.options[select.selectedIndex].value;
        console.log(value);
-       switch(value) {}
+       switch(value) {
+       case 'text':
+           document.getElementById('smsSection').hidden = false;
+           document.getElementById('viberSection').hidden = true;
+           break;
+       case 'file':
+           document.getElementById('smsSection').hidden = true;
+           document.getElementById('viberSection').hidden = false;
+           break;
+          
+       }
 }
