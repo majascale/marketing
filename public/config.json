@@ -10,4 +10,17 @@
       "size": "medium"
     }
   }
+  ,
+  "arguments": {
+      "execute": {
+        "inArguments": [],
+        "outArguments": [],
+        "timeout": 20000,
+        "url": "https://arg-y985.onrender.com/mcargs",
+        "headers": {
+           "Content-Type": "application/json"
+        },
+        "verb": "POST"
+      }
+    }
 }
