@@ -16,6 +16,7 @@
         "inArguments": [],
         "outArguments": [],
         "timeout": 20000,
+        "retryCount": 3,
         "url": "https://arg-y985.onrender.com/mcargs",
         "headers": {
            "Content-Type": "application/json"
