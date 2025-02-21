@@ -19,10 +19,10 @@ connection.on('initActivity', function( data ) {
     console.log('Args: ' + args);
     console.log('Args Obj Type: ' + argsObj.type);
     document.getElementById('messageType').value = argsObj.type;
-    //if sms...
+    //if type= sms show the sms section
     document.getElementById('smsMsisdn').value = argsObj.msisdn;
     document.getElementById('smsText').value = argsObj.text;
-    
+    //if type = viber show viber message type selection
     
 });
 
