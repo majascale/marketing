@@ -15,8 +15,9 @@ connection.on('initActivity', function( data ) {
     //var obj = JSON.parse(json);
 
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
+    var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
-    console.log('Args Type: ' + args.type);
+    console.log('Args Obj Type: ' + argsObj.type);
     //document.getElementById('messageType').value = args.type;
     //document.getElementById( 'smsText' ).value = obj.text;
     //document.getElementById( 'smsMsisdn' ).value = obj.msisdn;
