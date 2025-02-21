@@ -11,9 +11,12 @@ connection.on('initActivity', function( data ) {
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
     console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0].type,null,2));
     
-    //const json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
-    //const obj = JSON.parse(json);
-    //document.getElementById( 'messageType' ).value = obj.messageType;
+    //var json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
+    //var obj = JSON.parse(json);
+
+    var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
+    console.log('Args: ' + args);
+    //document.getElementById('messageType').value = args.type;
     //document.getElementById( 'smsText' ).value = obj.text;
     //document.getElementById( 'smsMsisdn' ).value = obj.msisdn;
     
