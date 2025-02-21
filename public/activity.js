@@ -24,7 +24,7 @@ connection.on('initActivity', function( data ) {
        document.getElementById('smsText').value = argsObj.text;
     }
     if(argsObj.type == 'viber'){
-        document.getElementById('WEacd831ad10').style.display='none'; 
+        document.getElementById('smsSection').style.display='none'; 
     }
     //if type = viber show viber message type selection
     
