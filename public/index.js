@@ -36,7 +36,9 @@ function setViberSectionVisibility(){
        case 'text+video':
            document.getElementById('viberTextSection').hidden = true;
            
-           break;                
+           break;      
+       default:
+           document.getElementById('viberTextSection').hidden = true;             
        }
 }
 
