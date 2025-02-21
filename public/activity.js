@@ -29,7 +29,11 @@ connection.on('initActivity', function( data ) {
                     //document.getElementById('viberSection').style.display='none';  
                     document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
                     document.getElementById('viberTextText').value = argsObj.text;
-                    document.getElementById('viberTextText').value = argsObj.text;
+                    document.getElementById('viberTextFallback').value = argsObj.fallbackText;
+                    document.getElementById('viberTextPlatform').value = argsObj.platform;
+                    document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+                    document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+                    document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
                break;
                case 'file':
                     document.getElementById('viberTextSection').style.display='none';
