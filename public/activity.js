@@ -11,22 +11,20 @@ connection.on('initActivity', function( data ) {
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
     console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0].type,null,2));
     
-    //var json = JSON.stringify(payload.arguments.execute.inArguments[1], null, 2 );
-    //var obj = JSON.parse(json);
-
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
     console.log('Args Obj Type: ' + argsObj.type);
     document.getElementById('messageType').value = argsObj.type;
     if(argsObj.type == 'sms'){ 
+       document.getElementById('viberSection').style.display='none';  
        document.getElementById('smsMsisdn').value = argsObj.msisdn;
        document.getElementById('smsText').value = argsObj.text;
     }
     if(argsObj.type == 'viber'){
         document.getElementById('smsSection').style.display='none'; 
     }
-    //if type = viber show viber message type selection
+    
     
 });
 
