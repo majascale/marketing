@@ -113,7 +113,7 @@ connection.on('clickedNext', function() {
             {
                 "type": type,
                 "msisdn": msisdn,
-                "text": smsText,
+                "text": text,
             }  
   ];  
   payload['arguments'].execute.retryCount = 3; 
