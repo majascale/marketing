@@ -4,17 +4,16 @@ function setSectionVisibility() {
        console.log(value);
        switch(value) {
        case 'sms':
-           //document.getElementById('smsSection').hidden = false;
-           document.getElementById('smsSection').style.display='block';           
-           document.getElementById('viberSection').hidden = true;
-           break;
+            document.getElementById('smsSection').style.display='block';           
+            document.getElementById('viberSection').style.display='none'; 
+            break;
        case 'viber':
-           document.getElementById('smsSection').hidden = true;
-           document.getElementById('viberSection').hidden = false;
-           break;
+            document.getElementById('smsSection').style.display='none'; 
+            document.getElementById('viberSection').style.display='block'; 
+            break;
        default:
-           document.getElementById('smsSection').hidden = true;
-           document.getElementById('viberSection').hidden = true;
+            document.getElementById('smsSection').style.display='none'; 
+            document.getElementById('viberSection').style.display='none'; 
        }
 }
 function setViberSectionVisibility(){
