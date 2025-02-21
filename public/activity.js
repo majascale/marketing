@@ -19,8 +19,9 @@ connection.on('initActivity', function( data ) {
     console.log('Args: ' + args);
     console.log('Args Obj Type: ' + argsObj.type);
     document.getElementById('messageType').value = argsObj.type;
-    //document.getElementById( 'smsText' ).value = obj.text;
-    //document.getElementById( 'smsMsisdn' ).value = obj.msisdn;
+    //if sms...
+    document.getElementById('smsText').value = argsObj.text;
+    //document.getElementById('smsMsisdn').value = argsObj.msisdn;
     
 });
 
