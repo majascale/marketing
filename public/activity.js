@@ -68,8 +68,8 @@ connection.on('clickedNext', function() {
        case 'sms':
             type = messageType;
             msisdn = document.getElementById( 'smsMsisdn' ).value;  
-            console.log('smsMsisdn is: ' + msisdn);
             text = document.getElementById( 'smsText' ).value;
+            console.log('smsMsisdn is: ' + msisdn);
             console.log('smsText is: ' + text);
             break;
        case 'viber':
@@ -84,6 +84,13 @@ connection.on('clickedNext', function() {
                     buttonUrl = document.getElementById('viberTextButtonUrl').value;
                     buttonName = document.getElementById('viberTextButtonName').value;
                     imageUrl =  document.getElementById('viberTextImageUrl').value;
+                    console.log('viberTextMsisdn is: ' + msisdn);
+                    console.log('viberTextText is: ' + text);
+                    console.log('platform is: ' + platform);
+                    console.log('fallbackText is: ' + fallbackText);
+                    console.log('buttonUrl is: ' + buttonUrl);
+                    console.log('buttonName is: ' + buttonName);
+                    console.log('imageUrl is: ' + imageUrl);
                 break;
                 case 'file':
                    
