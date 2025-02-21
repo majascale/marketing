@@ -28,7 +28,8 @@ connection.on('initActivity', function( data ) {
 
 
 connection.on('clickedNext', function() {
-  //messageType
+  var messageType = document.getElementById( 'messageType' ).value;
+  console.log('messageType is: ' + messageType);  
   var smsText = document.getElementById( 'smsText' ).value;
   console.log('smsText is: ' + smsText);
   var smsMsisdn = document.getElementById( 'smsMsisdn' ).value;  
