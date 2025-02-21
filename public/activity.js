@@ -54,18 +54,51 @@ connection.on('initActivity', function( data ) {
 
 connection.on('clickedNext', function() {
   var messageType = document.getElementById( 'messageType' ).value;
-  console.log('messageType is: ' + messageType);  
-  var smsText = document.getElementById( 'smsText' ).value;
-  console.log('smsText is: ' + smsText);
-  var smsMsisdn = document.getElementById( 'smsMsisdn' ).value;  
-  console.log('smsMsisdn is: ' + smsMsisdn);
-    
+  console.log('messageType is: ' + messageType); 
+  var type;  
+
+  switch(messageType) {
+       case 'sms':
+            type = messageType;
+            var smsText = document.getElementById( 'smsText' ).value;
+            console.log('smsText is: ' + smsText);
+            var smsMsisdn = document.getElementById( 'smsMsisdn' ).value;  
+            console.log('smsMsisdn is: ' + smsMsisdn);
+            break;
+       case 'viber':
+            var viberType = document.getElementById( 'viberType' ).value;
+            type = messageType + '+' + viberType;  
+             switch(viberType) {
+               case 'text':
+                    //document.getElementById('viberSection').style.display='none';  
+                    document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
+                    document.getElementById('viberTextText').value = argsObj.text;
+                    document.getElementById('viberTextFallback').value = argsObj.fallbackText;
+                    document.getElementById('viberTextPlatform').value = argsObj.platform;
+                    document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+                    document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+                    document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
+               break;
+               case 'file':
+                   
+               break;
+               case 'video':
+                    
+               break;
+               case 'text+video':
+                   
+               break;
+            }
+            break;
+  }  
+
+  console.log('Type is: ' + type);   
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
   payload['arguments'].execute.inArguments = [
             {
-                "type": messageType,
+                "type": type,
                 "msisdn": smsMsisdn,
                 "text": smsText,
             }  
