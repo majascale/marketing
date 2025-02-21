@@ -14,15 +14,17 @@ connection.on('initActivity', function( data ) {
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
-    console.log('Args Obj Type: ' + argsObj.type);
+    
     document.getElementById('messageType').value = argsObj.type;
-    if(argsObj.type == 'sms'){ 
-       document.getElementById('viberSection').style.display='none';  
-       document.getElementById('smsMsisdn').value = argsObj.msisdn;
-       document.getElementById('smsText').value = argsObj.text;
-    }
-    if(argsObj.type == 'viber'){
-        document.getElementById('smsSection').style.display='none'; 
+    switch(argsObj.type) {
+       case 'sms':
+            document.getElementById('viberSection').style.display='none';  
+            document.getElementById('smsMsisdn').value = argsObj.msisdn;
+            document.getElementById('smsText').value = argsObj.text;
+            break;
+       case 'viber':
+            document.getElementById('smsSection').style.display='none';
+            break;
     }
     
     
