@@ -40,7 +40,7 @@ connection.on('clickedNext', function() {
   payload['metaData'].isConfigured = true;  
   payload['arguments'].execute.inArguments = [
             {
-                "type": "sms",
+                "type": messageType,
                 "msisdn": smsMsisdn,
                 "text": smsText,
             }  
