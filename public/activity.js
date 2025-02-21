@@ -31,13 +31,13 @@ connection.on('initActivity', function( data ) {
                     document.getElementById('smsText').value = argsObj.text;
                break;
                case 'file':
-                    document.getElementById('smsSection').style.display='none';
+                    document.getElementById('viberTextSection').style.display='none';
                break;
                case 'video':
-                    document.getElementById('smsSection').style.display='none';
+                    document.getElementById('viberTextSection').style.display='none';
                break;
                case 'text+video':
-                    document.getElementById('smsSection').style.display='none';
+                    document.getElementById('viberTextSection').style.display='none';
                break;
             }
        break;
