@@ -27,8 +27,9 @@ connection.on('initActivity', function( data ) {
             switch(argsObj.viberType) {
                case 'text':
                     //document.getElementById('viberSection').style.display='none';  
-                    document.getElementById('smsMsisdn').value = argsObj.msisdn;
-                    document.getElementById('smsText').value = argsObj.text;
+                    document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
+                    document.getElementById('viberTextText').value = argsObj.text;
+                    document.getElementById('viberTextText').value = argsObj.text;
                break;
                case 'file':
                     document.getElementById('viberTextSection').style.display='none';
