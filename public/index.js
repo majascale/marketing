@@ -22,23 +22,22 @@ function setViberSectionVisibility(){
        console.log(value);
        switch(value) {
        case 'text':
-           document.getElementById('viberTextSection').hidden = false;
-           
+           document.getElementById('viberTextSection').style.display='block'; 
            break;
        case 'file':
-           document.getElementById('viberTextSection').hidden = true;
+           document.getElementById('viberTextSection').style.display='none'; 
            
            break;
        case 'video':
-           document.getElementById('viberTextSection').hidden = true;
+           document.getElementById('viberTextSection').style.display='none'; 
            
            break; 
        case 'text+video':
-           document.getElementById('viberTextSection').hidden = true;
+           document.getElementById('viberTextSection').style.display='none'; 
            
            break;      
        default:
-           document.getElementById('viberTextSection').hidden = true;             
+           document.getElementById('viberTextSection').style.display='none';             
        }
 }
 
