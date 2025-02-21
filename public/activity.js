@@ -55,7 +55,8 @@ connection.on('initActivity', function( data ) {
 connection.on('clickedNext', function() {
   var messageType = document.getElementById( 'messageType' ).value;
   console.log('messageType is: ' + messageType); 
-  var type;  
+  var type; 
+  var msisdn;  
 
   switch(messageType) {
        case 'sms':
@@ -64,6 +65,7 @@ connection.on('clickedNext', function() {
             console.log('smsText is: ' + smsText);
             var smsMsisdn = document.getElementById( 'smsMsisdn' ).value;  
             console.log('smsMsisdn is: ' + smsMsisdn);
+            msisdn = smsMsisdn;
             break;
        case 'viber':
             var viberType = document.getElementById( 'viberType' ).value;
