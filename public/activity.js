@@ -55,43 +55,47 @@ connection.on('initActivity', function( data ) {
 connection.on('clickedNext', function() {
   var messageType = document.getElementById( 'messageType' ).value;
   console.log('messageType is: ' + messageType); 
-  var type; 
-  var msisdn;  
+  var type;
+  var text;   
+  var msisdn;
+  var platform;
+  var fallbackText;  
+  var buttonUrl; 
+  var buttonName;
+  var imageUrl;
 
   switch(messageType) {
        case 'sms':
             type = messageType;
-            var smsText = document.getElementById( 'smsText' ).value;
-            console.log('smsText is: ' + smsText);
-            var smsMsisdn = document.getElementById( 'smsMsisdn' ).value;  
-            console.log('smsMsisdn is: ' + smsMsisdn);
-            msisdn = smsMsisdn;
+            msisdn = document.getElementById( 'smsMsisdn' ).value;  
+            console.log('smsMsisdn is: ' + msisdn);
+            text = document.getElementById( 'smsText' ).value;
+            console.log('smsText is: ' + text);
             break;
        case 'viber':
             var viberType = document.getElementById( 'viberType' ).value;
-            type = messageType + '+' + viberType;  
-             switch(viberType) {
-               case 'text':
-                    //document.getElementById('viberSection').style.display='none';  
-                    document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
-                    document.getElementById('viberTextText').value = argsObj.text;
-                    document.getElementById('viberTextFallback').value = argsObj.fallbackText;
-                    document.getElementById('viberTextPlatform').value = argsObj.platform;
-                    document.getElementById('viberTextButtonName').value = argsObj.buttonName;
-                    document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
-                    document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
-               break;
-               case 'file':
+            type = messageType + '+' + viberType; 
+            switch(viberType) {
+                case 'text':
+                    msisdn = document.getElementById('viberTextMsisdn').value;
+                    text = document.getElementById('viberTextText').value;
+                    platform = document.getElementById('viberTextPlatform').value;
+                    fallbackText = document.getElementById('viberTextFallback').value;
+                    buttonUrl = document.getElementById('viberTextButtonUrl').value;
+                    buttonName = document.getElementById('viberTextButtonName').value;
+                    imageUrl =  document.getElementById('viberTextImageUrl').value;
+                break;
+                case 'file':
                    
-               break;
-               case 'video':
+                break;
+                case 'video':
                     
-               break;
-               case 'text+video':
+                break;
+                case 'text+video':
                    
-               break;
+                break;
             }
-            break;
+       break;
   }  
 
   console.log('Type is: ' + type);   
@@ -101,7 +105,7 @@ connection.on('clickedNext', function() {
   payload['arguments'].execute.inArguments = [
             {
                 "type": type,
-                "msisdn": smsMsisdn,
+                "msisdn": msisdn,
                 "text": smsText,
             }  
   ];  
