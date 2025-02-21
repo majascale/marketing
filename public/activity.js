@@ -20,8 +20,9 @@ connection.on('initActivity', function( data ) {
     console.log('Args Obj Type: ' + argsObj.type);
     document.getElementById('messageType').value = argsObj.type;
     //if sms...
+    document.getElementById('smsMsisdn').value = argsObj.msisdn;
     document.getElementById('smsText').value = argsObj.text;
-    //document.getElementById('smsMsisdn').value = argsObj.msisdn;
+    
     
 });
 
