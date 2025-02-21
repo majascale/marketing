@@ -15,15 +15,18 @@ connection.on('initActivity', function( data ) {
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
     
-    document.getElementById('messageType').value = argsObj.type;
+    //document.getElementById('messageType').value = argsObj.type;
     switch(argsObj.type) {
        case 'sms':
-            document.getElementById('viberSection').style.display='none';  
+            document.getElementById('viberSection').style.display='none'; 
+            document.getElementById('messageType').value = argsObj.type;
             document.getElementById('smsMsisdn').value = argsObj.msisdn;
             document.getElementById('smsText').value = argsObj.text;
             break;
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
+            document.getElementById('messageType').value = 'viber';
+            //document.getElementById('messageType').value = 'viber';
             document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
             document.getElementById('viberTextText').value = argsObj.text;
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
