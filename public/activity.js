@@ -26,7 +26,7 @@ connection.on('initActivity', function( data ) {
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
-            //document.getElementById('messageType').value = 'viber';
+            document.getElementById('viberType').value = 'text';
             document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
             document.getElementById('viberTextText').value = argsObj.text;
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
