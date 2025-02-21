@@ -20,11 +20,10 @@
          <label for="smsText">Text</label>
          <input type="text" id="smsText" required>
       </div>
-      <div id="viberSection" hidden> 
+      <div id="viberSection"> 
         <label for="viberType">Viber Message Type</label>
         <select id="viberType" onChange="setViberSectionVisibility()">
-          <option value="none" selected></option>
-          <option value="text">Text</option>
+          <option value="text" selected>Text</option>
           <option value="file">File</option>
           <option value="video">Video</option>
           <option value="text+video">Text & Video</option>
