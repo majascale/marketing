@@ -24,7 +24,23 @@ connection.on('initActivity', function( data ) {
             break;
        case 'viber':
             document.getElementById('smsSection').style.display='none';
-            break;
+            switch(argsObj.viberType) {
+               case 'text':
+                    //document.getElementById('viberSection').style.display='none';  
+                    document.getElementById('smsMsisdn').value = argsObj.msisdn;
+                    document.getElementById('smsText').value = argsObj.text;
+               break;
+               case 'file':
+                    document.getElementById('smsSection').style.display='none';
+               break;
+               case 'video':
+                    document.getElementById('smsSection').style.display='none';
+               break;
+               case 'text+video':
+                    document.getElementById('smsSection').style.display='none';
+               break;
+            }
+       break;
     }
     
     
