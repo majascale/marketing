@@ -22,32 +22,17 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsMsisdn').value = argsObj.msisdn;
             document.getElementById('smsText').value = argsObj.text;
             break;
-       case 'viber':
+       case 'viber+text':
             document.getElementById('smsSection').style.display='none';
-            switch(argsObj.viberType) {
-               case 'text':
-                    //document.getElementById('viberSection').style.display='none';  
-                    document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
-                    document.getElementById('viberTextText').value = argsObj.text;
-                    document.getElementById('viberTextFallback').value = argsObj.fallbackText;
-                    document.getElementById('viberTextPlatform').value = argsObj.platform;
-                    document.getElementById('viberTextButtonName').value = argsObj.buttonName;
-                    document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
-                    document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
-               break;
-               case 'file':
-                    document.getElementById('viberTextSection').style.display='none';
-               break;
-               case 'video':
-                    document.getElementById('viberTextSection').style.display='none';
-               break;
-               case 'text+video':
-                    document.getElementById('viberTextSection').style.display='none';
-               break;
-            }
+            document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
+            document.getElementById('viberTextText').value = argsObj.text;
+            document.getElementById('viberTextFallback').value = argsObj.fallbackText;
+            document.getElementById('viberTextPlatform').value = argsObj.platform;
+            document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+            document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
        break;
     }
-    
     
 });
 
