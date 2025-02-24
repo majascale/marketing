@@ -32,6 +32,8 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
             document.getElementById('viberTextPlatform').value = argsObj.platform;
             document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+            document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
             break;
     }
     
@@ -68,10 +70,7 @@ connection.on('clickedNext', function() {
                     platform = document.getElementById('viberTextPlatform').value;
                     fallbackText = document.getElementById('viberTextFallback').value;
                     buttonUrl = document.getElementById('viberTextButtonUrl').value;
-                    if(document.getElementById('viberTextButtonName').value){
-                        buttonName = document.getElementById('viberTextButtonName').value;
-                        console.log('Test 2: ' +  document.getElementById('viberTextButtonName').value);
-                    }
+                    buttonName = document.getElementById('viberTextButtonName').value;
                     imageUrl =  document.getElementById('viberTextImageUrl').value;
                     console.log('viberTextMsisdn is: ' + msisdn);
                     console.log('viberTextText is: ' + text);
@@ -116,9 +115,10 @@ connection.on('clickedNext', function() {
   }   
   if(!buttonName){
       console.log('Test 3: ');
+      payload['arguments'].execute.inArguments[0].buttonName = undefined;
   }else{
-      payload['arguments'].execute.inArguments[0].buttonName = buttonName;
       console.log('Test 4: ');
+      payload['arguments'].execute.inArguments[0].buttonName = buttonName;
   } 
   if(buttonUrl != null){
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
