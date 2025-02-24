@@ -102,6 +102,9 @@ connection.on('clickedNext', function() {
                 "type": type,
                 "msisdn": msisdn,
                 "text": text,
+                if(platform != null){
+                   "platform": platform,
+                }
             }  
   ];  
   payload['arguments'].execute.retryCount = 3; 
