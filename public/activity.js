@@ -119,11 +119,11 @@ connection.on('clickedNext', function() {
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
 
-  if(!type){
-      payload['arguments'].execute.inArguments[0].type = undefined;
-  }else{
+  //if(!type){
+   //   payload['arguments'].execute.inArguments[0].type = undefined;
+  //}else{
       payload['arguments'].execute.inArguments[0].type = type;
-  }    
+  //}    
   if(!msisdn){
       payload['arguments'].execute.inArguments[0].msisdn = undefined;
   }else{
