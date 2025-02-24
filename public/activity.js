@@ -74,11 +74,11 @@ connection.on('clickedNext', function() {
                     imageUrl =  document.getElementById('viberTextImageUrl').value;
                     console.log('viberTextMsisdn is: ' + msisdn);
                     console.log('viberTextText is: ' + text);
-                    console.log('platform is: ' + platform);
-                    console.log('fallbackText is: ' + fallbackText);
-                    console.log('buttonUrl is: ' + buttonUrl);
-                    console.log('buttonName is: ' + buttonName);
-                    console.log('imageUrl is: ' + imageUrl);
+                    console.log('viberTextplatform is: ' + platform);
+                    console.log('viberTextfallbackText is: ' + fallbackText);
+                    console.log('viberTextbuttonUrl is: ' + buttonUrl);
+                    console.log('viberTextbuttonName is: ' + buttonName);
+                    console.log('viberTextimageUrl is: ' + imageUrl);
                 break;
                 case 'file':
                    
@@ -102,10 +102,14 @@ connection.on('clickedNext', function() {
                 "type": type,
                 "msisdn": msisdn,
                 "text": text,
-                if(platform != null){
-                   "platform": platform,
-                }
+                //"platform": platform,
+                //"buttonName": buttonName,
+                //"buttonUrl": buttonUrl,
+                //"imageUrl: imageUrl,
             }  
+  if(platform != null){
+      payload['arguments'].execute.inArguments.platform = platform;
+  }   
   ];  
   payload['arguments'].execute.retryCount = 3; 
  
