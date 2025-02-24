@@ -117,8 +117,11 @@ connection.on('clickedNext', function() {
   if(fallbackText != null){
       payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
   }   
-  if(buttonName != null){
+  if(!buttonName){
+      console.log('Test 3: ');
+  }else{
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
+      console.log('Test 4: ');
   } 
   if(buttonUrl != null){
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
