@@ -33,6 +33,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextPlatform').value = argsObj.platform;
             if(argsObj.buttonName != null){
                 document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+                console.log('Test 1: ' +  document.getElementById('viberTextButtonName').value);
             }
             break;
     }
@@ -72,6 +73,7 @@ connection.on('clickedNext', function() {
                     buttonUrl = document.getElementById('viberTextButtonUrl').value;
                     if(document.getElementById('viberTextButtonName').value){
                         buttonName = document.getElementById('viberTextButtonName').value;
+                        console.log('Test 2: ' +  document.getElementById('viberTextButtonName').value);
                     }
                     imageUrl =  document.getElementById('viberTextImageUrl').value;
                     console.log('viberTextMsisdn is: ' + msisdn);
