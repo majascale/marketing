@@ -117,9 +117,10 @@ connection.on('clickedNext', function() {
   if(fallbackText != null){
       payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
   }   
-  if(buttonName !== null){
+  if(buttonName == null){
+  } else{
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
-  }  
+  }
   if(buttonUrl != null){
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
   }  
