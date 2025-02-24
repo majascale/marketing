@@ -9,13 +9,16 @@ connection.on('initActivity', function( data ) {
        payload = data;
     }
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
-    console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0].type,null,2));
+    //console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0].type,null,2));
     
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
     
     //document.getElementById('messageType').value = argsObj.type;
+    if(!argsObj.type){
+        argsObj.type == 'sms'
+    }
     switch(argsObj.type) {
        case 'sms':
             document.getElementById('viberSection').style.display='none'; 
