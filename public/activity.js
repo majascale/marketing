@@ -70,7 +70,9 @@ connection.on('clickedNext', function() {
                     platform = document.getElementById('viberTextPlatform').value;
                     fallbackText = document.getElementById('viberTextFallback').value;
                     buttonUrl = document.getElementById('viberTextButtonUrl').value;
-                    buttonName = document.getElementById('viberTextButtonName').value;
+                    if(document.getElementById('viberTextButtonName').value){
+                        buttonName = document.getElementById('viberTextButtonName').value;
+                    }
                     imageUrl =  document.getElementById('viberTextImageUrl').value;
                     console.log('viberTextMsisdn is: ' + msisdn);
                     console.log('viberTextText is: ' + text);
