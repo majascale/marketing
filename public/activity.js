@@ -35,9 +35,14 @@ connection.on('initActivity', function( data ) {
             if(argsObj.buttonName != null){
                 document.getElementById('viberTextButtonName').value = argsObj.buttonName;
             }
-            
-            document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
-            document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
+            if(argsObj.buttonUrl != null){
+                document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            }
+            if(argsObj.imageUrl != null){
+                document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
+            }
+            //document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            //document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
        break;
     }
     
