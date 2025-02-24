@@ -99,16 +99,25 @@ connection.on('clickedNext', function() {
   payload['metaData'].isConfigured = true;  
   payload['arguments'].execute.inArguments = [
             {
-                "type": type,
-                "msisdn": msisdn,
-                "text": text,
+                //"type": type,
+                //"msisdn": msisdn,
+                //"text": text,
                 //"platform": platform,
                 //"buttonName": buttonName,
                 //"buttonUrl": buttonUrl,
                 //"imageUrl: imageUrl,
             }    
   ];  
- if(platform != null){
+  if(type != null){
+      payload['arguments'].execute.inArguments[0].type = type;
+  }    
+  if(msisdn != null){
+      payload['arguments'].execute.inArguments[0].msisdn = msisdn;
+  }  
+  if(text != null){
+      payload['arguments'].execute.inArguments[0].text = text;
+  }    
+  if(platform != null){
       payload['arguments'].execute.inArguments[0].platform = platform;
   }   
   payload['arguments'].execute.retryCount = 3; 
