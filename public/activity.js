@@ -106,11 +106,11 @@ connection.on('clickedNext', function() {
                 //"buttonName": buttonName,
                 //"buttonUrl": buttonUrl,
                 //"imageUrl: imageUrl,
-            }  
-  if(platform != null){
-      payload['arguments'].execute.inArguments.platform = platform;
-  }   
+            }    
   ];  
+ if(platform != null){
+      payload['arguments'].execute.inArguments[0].platform = platform;
+  }   
   payload['arguments'].execute.retryCount = 3; 
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
