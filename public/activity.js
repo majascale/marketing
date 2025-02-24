@@ -31,10 +31,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextText').value = argsObj.text;
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
             document.getElementById('viberTextPlatform').value = argsObj.platform;
-            if(argsObj.buttonName != null){
-                document.getElementById('viberTextButtonName').value = argsObj.buttonName;
-                console.log('Test 1: ' +  document.getElementById('viberTextButtonName').value);
-            }
+            document.getElementById('viberTextButtonName').value = argsObj.buttonName;
             break;
     }
     
