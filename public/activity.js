@@ -32,7 +32,10 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
             document.getElementById('viberTextPlatform').value = argsObj.platform;
             if(!argsObj.buttonName){
-               document.getElementById('viberTextButtonName').value = argsObj.buttonName; 
+                console.log('Point 7');
+            }else{
+                document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+                console.log('Point 8');
             }
             document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
             document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
