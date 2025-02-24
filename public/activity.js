@@ -119,19 +119,19 @@ connection.on('clickedNext', function() {
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
 
-  if(type != null){
+  if(!type){
       payload['arguments'].execute.inArguments[0].type = type;
   }    
-  if(msisdn != null){
+  if(!msisdn){
       payload['arguments'].execute.inArguments[0].msisdn = msisdn;
   }  
-  if(text != null){
+  if(!text){
       payload['arguments'].execute.inArguments[0].text = text;
   }    
-  if(platform != null){
+  if(!platform){
       payload['arguments'].execute.inArguments[0].platform = platform;
   } 
-  if(fallbackText != null){
+  if(!fallbackText){
       payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
   }   
   if(!buttonName){
@@ -141,10 +141,10 @@ connection.on('clickedNext', function() {
       console.log('Test 4: ');
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
   } 
-  if(buttonUrl != null){
+  if(!buttonUrl){
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
   }  
-  if(imageUrl != null){
+  if(!imageUrl){
       payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
   }    
   payload['arguments'].execute.retryCount = 3; 
