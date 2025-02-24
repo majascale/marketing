@@ -106,11 +106,7 @@ connection.on('clickedNext', function() {
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
- /* payload['arguments'].execute.inArguments = [
-            {
-                //"imageUrl: imageUrl,
-            }    
-  ];  */
+
   if(type != null){
       payload['arguments'].execute.inArguments[0].type = type;
   }    
