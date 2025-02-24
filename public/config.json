@@ -13,7 +13,9 @@
   ,
   "arguments": {
       "execute": {
-        "inArguments": [],
+        "inArguments": [{
+            "type": "sms"
+        }],
         "outArguments": [],
         "timeout": 20000,
          "retryCount": 3,
