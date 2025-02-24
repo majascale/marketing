@@ -120,31 +120,43 @@ connection.on('clickedNext', function() {
   payload['metaData'].isConfigured = true;  
 
   if(!type){
+      payload['arguments'].execute.inArguments[0].type = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].type = type;
   }    
   if(!msisdn){
+      payload['arguments'].execute.inArguments[0].msisdn = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].msisdn = msisdn;
   }  
   if(!text){
+      payload['arguments'].execute.inArguments[0].text = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].text = text;
   }    
   if(!platform){
+      payload['arguments'].execute.inArguments[0].platform = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].platform = platform;
   } 
   if(!fallbackText){
+      payload['arguments'].execute.inArguments[0].fallbackText = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
   }   
   if(!buttonName){
-      console.log('Test 3: ');
       payload['arguments'].execute.inArguments[0].buttonName = undefined;
   }else{
-      console.log('Test 4: ');
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
   } 
   if(!buttonUrl){
+      payload['arguments'].execute.inArguments[0].buttonUrl = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
   }  
   if(!imageUrl){
+      payload['arguments'].execute.inArguments[0].imageUrl = undefined;
+  }else{
       payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
   }    
   payload['arguments'].execute.retryCount = 3; 
