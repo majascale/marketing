@@ -32,7 +32,10 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextText').value = argsObj.text;
             document.getElementById('viberTextFallback').value = argsObj.fallbackText;
             document.getElementById('viberTextPlatform').value = argsObj.platform;
-            document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+            if(argsObj.buttonName != null){
+                document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+            }
+            //document.getElementById('viberTextButtonName').value = argsObj.buttonName;
             document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
             document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
        break;
