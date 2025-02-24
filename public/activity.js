@@ -24,6 +24,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsText').value = argsObj.text;
             break;
        case 'viber+text':
+            //do not fill with undefined values !!!
             document.getElementById('smsSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
