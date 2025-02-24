@@ -27,18 +27,34 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
-            document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
-            document.getElementById('viberTextText').value = argsObj.text;
-            document.getElementById('viberTextFallback').value = argsObj.fallbackText;
-            document.getElementById('viberTextPlatform').value = argsObj.platform;
-            if(!argsObj.buttonName){
-                console.log('Point 7');
+            if(!argsObj.msisdn){
             }else{
-                document.getElementById('viberTextButtonName').value = argsObj.buttonName;
-                console.log('Point 8');
+                document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
             }
-            document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
-            document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
+            if(!argsObj.text){  
+            }else{
+                document.getElementById('viberTextText').value = argsObj.text;
+            }
+            if(!argsObj.fallbackText){
+            }else{
+                 document.getElementById('viberTextFallback').value = argsObj.fallbackText;
+            }
+            if(!argsObj.platform){
+            }else{
+                 document.getElementById('viberTextPlatform').value = argsObj.platform;
+            }
+            if(!argsObj.buttonName){
+            }else{
+                 document.getElementById('viberTextButtonName').value = argsObj.buttonName;
+            }
+            if(!argsObj.buttonUrl){  
+            }else{
+                 document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            }
+            if(!argsObj.imageUrl){  
+            }else{
+                 document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
+            }
             break;
     }
     
