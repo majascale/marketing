@@ -114,6 +114,9 @@ connection.on('clickedNext', function() {
   if(platform != null){
       payload['arguments'].execute.inArguments[0].platform = platform;
   } 
+  if(fallbackText != null){
+      payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
+  }   
   if(buttonName != null){
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
   }  
