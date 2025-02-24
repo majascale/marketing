@@ -97,17 +97,11 @@ connection.on('clickedNext', function() {
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('Payload-Before: ' + jsonObj);  
   payload['metaData'].isConfigured = true;  
-  payload['arguments'].execute.inArguments = [
+ /* payload['arguments'].execute.inArguments = [
             {
-                //"type": type,
-                //"msisdn": msisdn,
-                //"text": text,
-                //"platform": platform,
-                //"buttonName": buttonName,
-                //"buttonUrl": buttonUrl,
                 //"imageUrl: imageUrl,
             }    
-  ];  
+  ];  */
   if(type != null){
       payload['arguments'].execute.inArguments[0].type = type;
   }    
@@ -119,7 +113,16 @@ connection.on('clickedNext', function() {
   }    
   if(platform != null){
       payload['arguments'].execute.inArguments[0].platform = platform;
-  }   
+  } 
+  if(buttonName != null){
+      payload['arguments'].execute.inArguments[0].buttonName = buttonName;
+  }  
+  if(buttonUrl != null){
+      payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
+  }  
+  if(imageUrl != null){
+      payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
+  }    
   payload['arguments'].execute.retryCount = 3; 
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
