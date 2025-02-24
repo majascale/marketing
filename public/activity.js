@@ -16,9 +16,9 @@ connection.on('initActivity', function( data ) {
     console.log('Args: ' + args);
     
     //document.getElementById('messageType').value = argsObj.type;
-    if(!argsObj.type){
-        argsObj.type == 'sms'
-    }
+    //if(!argsObj.type){
+    //    argsObj.type == 'sms'
+    //}
     switch(argsObj.type) {
        case 'sms':
             document.getElementById('viberSection').style.display='none'; 
