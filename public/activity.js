@@ -96,6 +96,42 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberFileSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'video';
+            if(!argsObj.msisdn){
+            }else{
+                 document.getElementById('viberVideoMsisdn').value = argsObj.msisdn;
+            }
+            if(!argsObj.fallbackText){
+            }else{
+                 document.getElementById('viberVideoFallback').value = argsObj.fallbackText;
+            }
+            if(!argsObj.platform){
+            }else{
+                 document.getElementById('viberVideoPlatform').value = argsObj.platform;
+            }
+            if(!argsObj.buttonName){
+            }else{
+                 document.getElementById('viberVideoButtonName').value = argsObj.buttonName;
+            }
+            if(!argsObj.buttonUrl){  
+            }else{
+                 document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+            }
+            if(!argsObj.videoUrl){
+            }else{
+                 document.getElementById('viberVideoUrl').value = argsObj.videoUrl;
+            }
+            if(!argsObj.videoSize){  
+            }else{
+                 document.getElementById('viberVideoSize').value = argsObj.videoSize;
+            }
+            if(!argsObj.videoDuration){
+            }else{
+                 document.getElementById('viberVideoDuration').value = argsObj.videoDuration;
+            }
+            if(!argsObj.thumbnailUrl){  
+            }else{
+                 document.getElementById('viberVideoThumbnailUrl').value = argsObj.thumbnailUrl;
+            }
             break;
     }
     
@@ -113,7 +149,13 @@ connection.on('clickedNext', function() {
   var buttonUrl; 
   var buttonName;
   var imageUrl;
-
+  var fileUrl;
+  var fileName;
+  var videoUrl;  
+  var videoSize;
+  var videoDuration;
+  var thumbnailUrl;  
+    
   switch(messageType) {
        case 'sms':
             type = messageType;
