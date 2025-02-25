@@ -24,15 +24,18 @@ function setViberSectionVisibility(){
        switch(value) {
        case 'text':
            document.getElementById('viberTextSection').style.display='block'; 
-           document.getElementById('viberFileSection').style.display='none';           
+           document.getElementById('viberFileSection').style.display='none';
+           document.getElementById('viberVideoSection').style.display='none';             
            break;
        case 'file':
            document.getElementById('viberTextSection').style.display='none'; 
-           document.getElementById('viberFileSection').style.display='block'; 
+           document.getElementById('viberFileSection').style.display='block';
+           document.getElementById('viberVideoSection').style.display='none';           
            break;
        case 'video':
            document.getElementById('viberTextSection').style.display='none'; 
-           document.getElementById('viberFileSection').style.display='none';  
+           document.getElementById('viberFileSection').style.display='none';
+           document.getElementById('viberVideoSection').style.display='block';           
            break; 
        case 'text+video':
            document.getElementById('viberTextSection').style.display='none'; 
