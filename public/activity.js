@@ -15,13 +15,13 @@ connection.on('initActivity', function( data ) {
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
 
-    console.log('Type before is: ' + argsObj.type);
+    //console.log('Type before is: ' + argsObj.type);
     
-    if(argsObj.type == 'viber') {
-        argsObj.type = 'viber' + document.getElementById('viberType').value;
-    }  
+    //if(argsObj.type == 'viber') {
+    //    argsObj.type = 'viber' + document.getElementById('viberType').value;
+    //}  
 
-    console.log('Type after is: ' + argsObj.type);
+    //console.log('Type after is: ' + argsObj.type);
     
     switch(argsObj.type) {
        case 'sms':
