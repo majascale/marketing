@@ -67,6 +67,10 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'file';
+            if(!argsObj.msisdn){
+            }else{
+               // document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
+            }
             break;
     }
     
