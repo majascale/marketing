@@ -31,6 +31,7 @@ connection.on('initActivity', function( data ) {
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
             document.getElementById('viberFileSection').style.display='none';
+            document.getElementById('viberVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
             if(!argsObj.msisdn){
@@ -65,6 +66,7 @@ connection.on('initActivity', function( data ) {
        case 'viber+file': 
             document.getElementById('smsSection').style.display='none';
             document.getElementById('viberTextSection').style.display='none';
+            document.getElementById('viberVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'file';
             if(!argsObj.msisdn){
@@ -90,6 +92,10 @@ connection.on('initActivity', function( data ) {
             break;
          case 'viber+video': 
             document.getElementById('smsSection').style.display='none';
+            document.getElementById('viberTextSection').style.display='none';
+            document.getElementById('viberFileSection').style.display='none';
+            document.getElementById('messageType').value = 'viber';
+            document.getElementById('viberType').value = 'video';
             break;
     }
     
