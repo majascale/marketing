@@ -61,6 +61,11 @@ connection.on('initActivity', function( data ) {
                  document.getElementById('viberTextImageUrl').value = argsObj.imageUrl;
             }
             break;
+       case 'viber+file': 
+            document.getElementById('smsSection').style.display='none';
+            document.getElementById('messageType').value = 'viber';
+            document.getElementById('viberType').value = 'file';
+            break;
     }
     
 });
