@@ -19,8 +19,14 @@ connection.on('initActivity', function( data ) {
        case 'sms':
             document.getElementById('viberSection').style.display='none'; 
             document.getElementById('messageType').value = argsObj.type;
-            document.getElementById('smsMsisdn').value = argsObj.msisdn;
-            document.getElementById('smsText').value = argsObj.text;
+            if(!argsObj.msisdn){
+            }else{
+                document.getElementById('smsMsisdn').value = argsObj.msisdn;
+            }
+            if(!argsObj.text){ 
+            }else{    
+                document.getElementById('smsText').value = argsObj.text;
+            }    
             break;
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
@@ -75,8 +81,8 @@ connection.on('clickedNext', function() {
   switch(messageType) {
        case 'sms':
             type = messageType;
-            msisdn = document.getElementById( 'smsMsisdn' ).value;  
-            text = document.getElementById( 'smsText' ).value;
+            msisdn = document.getElementById('smsMsisdn').value;  
+            text = document.getElementById('smsText').value;
             console.log('smsMsisdn is: ' + msisdn);
             console.log('smsText is: ' + text);
             break;
@@ -125,37 +131,43 @@ connection.on('clickedNext', function() {
   }else{
       payload['arguments'].execute.inArguments[0].msisdn = msisdn;
   }  
+    
   if(!text){
       payload['arguments'].execute.inArguments[0].text = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].text = text;
-  }    
+  }   
+    
   if(!platform){
       payload['arguments'].execute.inArguments[0].platform = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].platform = platform;
   } 
+    
   if(!fallbackText){
       payload['arguments'].execute.inArguments[0].fallbackText = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].fallbackText = fallbackText;
   }   
+    
   if(!buttonName){
       payload['arguments'].execute.inArguments[0].buttonName = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].buttonName = buttonName;
   } 
+    
   if(!buttonUrl){
       payload['arguments'].execute.inArguments[0].buttonUrl = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].buttonUrl = buttonUrl;
-  }  
+  } 
+    
   if(!imageUrl){
       payload['arguments'].execute.inArguments[0].imageUrl = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
   }    
-  //payload['arguments'].execute.retryCount = 3; 
+ 
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
