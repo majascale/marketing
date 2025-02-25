@@ -69,8 +69,24 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberType').value = 'file';
             if(!argsObj.msisdn){
             }else{
-               // document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
+                document.getElementById('viberFileMsisdn').value = argsObj.msisdn;
             }
+            if(!argsObj.fallbackText){
+            }else{
+                 document.getElementById('viberFileFallback').value = argsObj.fallbackText;
+            }
+            if(!argsObj.platform){
+            }else{
+                 document.getElementById('viberFilePlatform').value = argsObj.platform;
+            }
+            if(!argsObj.fileUrl){  
+            }else{
+                 document.getElementById('viberFileUrl').value = argsObj.fileUrl;
+            } 
+            if(!argsObj.fileName){  
+            }else{
+                 document.getElementById('viberFileName').value = argsObj.fileName;
+            } 
             break;
     }
     
