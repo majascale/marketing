@@ -10,6 +10,7 @@ function setSectionVisibility() {
        case 'viber':
             document.getElementById('smsSection').style.display='none'; 
             document.getElementById('viberSection').style.display='block'; 
+            setViberSectionVisibility();         
             break;
        default:
             document.getElementById('smsSection').style.display='none'; 
