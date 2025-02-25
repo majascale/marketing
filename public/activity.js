@@ -15,6 +15,8 @@ connection.on('initActivity', function( data ) {
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
     
+    console.log('Viber Type is: ' + document.getElementById('viberType').value); 
+    
     switch(argsObj.type) {
        case 'sms':
             document.getElementById('viberSection').style.display='none'; 
