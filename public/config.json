@@ -18,7 +18,8 @@
         }],
         "outArguments": [],
         "timeout": 20000,
-         "retryCount": 3,
+        "retryCount": 3,
+        "retryDelay": 10000,
         "url": "https://arg-y985.onrender.com/mcargs",
         "headers": {
            "Content-Type": "application/json"
