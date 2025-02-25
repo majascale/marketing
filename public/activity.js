@@ -9,16 +9,12 @@ connection.on('initActivity', function( data ) {
        payload = data;
     }
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
-    //console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0].type,null,2));
+    console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0],null,2));
     
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
     
-    //document.getElementById('messageType').value = argsObj.type;
-    //if(!argsObj.type){
-    //    argsObj.type == 'sms'
-    //}
     switch(argsObj.type) {
        case 'sms':
             document.getElementById('viberSection').style.display='none'; 
@@ -119,14 +115,11 @@ connection.on('clickedNext', function() {
 
   console.log('Type is: ' + type);   
   var jsonObj = JSON.stringify(payload,null,2);
-  console.log('Payload-Before: ' + jsonObj);  
+  console.log('Payload-Before: ' + jsonObj);
+    
   payload['metaData'].isConfigured = true;  
-
-  //if(!type){
-   //   payload['arguments'].execute.inArguments[0].type = undefined;
-  //}else{
-      payload['arguments'].execute.inArguments[0].type = type;
-  //}    
+  payload['arguments'].execute.inArguments[0].type = type;
+     
   if(!msisdn){
       payload['arguments'].execute.inArguments[0].msisdn = undefined;
   }else{
