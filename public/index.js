@@ -23,21 +23,23 @@ function setViberSectionVisibility(){
        switch(value) {
        case 'text':
            document.getElementById('viberTextSection').style.display='block'; 
+           document.getElementById('viberFileSection').style.display='none';           
            break;
        case 'file':
            document.getElementById('viberTextSection').style.display='none'; 
-           
+           document.getElementById('viberFileSection').style.display='block'; 
            break;
        case 'video':
            document.getElementById('viberTextSection').style.display='none'; 
-           
+           document.getElementById('viberFileSection').style.display='none';  
            break; 
        case 'text+video':
            document.getElementById('viberTextSection').style.display='none'; 
-           
+           document.getElementById('viberFileSection').style.display='none';  
            break;      
        default:
-           document.getElementById('viberTextSection').style.display='none';             
+           document.getElementById('viberTextSection').style.display='none'; 
+           document.getElementById('viberFileSection').style.display='none';           
        }
 }
 
