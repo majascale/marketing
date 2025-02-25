@@ -9,13 +9,15 @@ connection.on('initActivity', function( data ) {
        payload = data;
     }
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
-    console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0],null,2));
+    //console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0],null,2));
     
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
+
+    console.log('Type is: ' + argsObj.type);
+    console.log('Viber Type is: ' + document.getElementById('viberType').value);
     
-    console.log('Viber Type is: ' + document.getElementById('viberType').value); 
     
     switch(argsObj.type) {
        case 'sms':
