@@ -134,7 +134,16 @@ connection.on('clickedNext', function() {
                     console.log('viberTextimageUrl is: ' + imageUrl);
                 break;
                 case 'file':
-                   
+                    msisdn = document.getElementById('viberFileMsisdn').value;
+                    fallbackText = document.getElementById('viberFileFallback').value;
+                    platform = document.getElementById('viberFilePlatform').value;
+                    fileUrl = document.getElementById('viberFileUrl').value;
+                    fileName = document.getElementById('viberFileName').value;
+                    console.log('viberFileMsisdn is: ' + msisdn);
+                    console.log('viberFileFallback is: ' + fallbackText);
+                    console.log('viberFilePlatform is: ' + platform);
+                    console.log('viberFileUrl is: ' + fileUrl);
+                    console.log('viberFileName is: ' + fileName);
                 break;
                 case 'video':
                     
@@ -194,7 +203,18 @@ connection.on('clickedNext', function() {
   }else{
       payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
   }    
- 
+
+  if(!fileUrl){
+      payload['arguments'].execute.inArguments[0].fileUrl = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].fileUrl = fileUrl;
+  }  
+
+  if(!fileName){
+      payload['arguments'].execute.inArguments[0].fileName = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].fileName = fileName;
+  }    
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
