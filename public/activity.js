@@ -30,6 +30,7 @@ connection.on('initActivity', function( data ) {
             break;
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
+            document.getElementById('viberFileSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
             if(!argsObj.msisdn){
@@ -63,6 +64,7 @@ connection.on('initActivity', function( data ) {
             break;
        case 'viber+file': 
             document.getElementById('smsSection').style.display='none';
+            document.getElementById('viberTextSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'file';
             break;
