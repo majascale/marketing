@@ -155,7 +155,7 @@ connection.on('clickedNext', function() {
   }else{
       payload['arguments'].execute.inArguments[0].imageUrl = imageUrl;
   }    
-  payload['arguments'].execute.retryCount = 3; 
+  //payload['arguments'].execute.retryCount = 3; 
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
