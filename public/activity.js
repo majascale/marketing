@@ -14,14 +14,6 @@ connection.on('initActivity', function( data ) {
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
     console.log('Args: ' + args);
-
-    //console.log('Type before is: ' + argsObj.type);
-    
-    //if(argsObj.type == 'viber') {
-    //    argsObj.type = 'viber' + document.getElementById('viberType').value;
-    //}  
-
-    //console.log('Type after is: ' + argsObj.type);
     
     switch(argsObj.type) {
        case 'sms':
