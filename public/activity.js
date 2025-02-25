@@ -88,6 +88,9 @@ connection.on('initActivity', function( data ) {
                  document.getElementById('viberFileName').value = argsObj.fileName;
             } 
             break;
+         case 'viber+video': 
+            document.getElementById('smsSection').style.display='none';
+            break;
     }
     
 });
