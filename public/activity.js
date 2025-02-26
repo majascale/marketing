@@ -9,7 +9,6 @@ connection.on('initActivity', function( data ) {
        payload = data;
     }
     console.log('Payload Data: ' + JSON.stringify(payload,null,2));
-    //console.log('Payload Type: ' + JSON.stringify(payload['arguments'].execute.inArguments[0],null,2));
     
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
