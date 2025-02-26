@@ -140,6 +140,48 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextSection').style.display='none';
             document.getElementById('viberFileSection').style.display='none';
             document.getElementById('viberVideoSection').style.display='none';
+            document.getElementById('messageType').value = 'viber';
+            document.getElementById('viberType').value = 'text+video';
+            if(!argsObj.msisdn){
+            }else{
+                 document.getElementById('viberTextVideoMsisdn').value = argsObj.msisdn;
+            }
+            if(!argsObj.text){  
+            }else{
+                  document.getElementById('viberTextVideoText').value = argsObj.text;
+            }
+            if(!argsObj.fallbackText){
+            }else{
+                  document.getElementById('viberTextVideoFallback').value = argsObj.fallbackText;
+            }
+            if(!argsObj.platform){
+            }else{
+                  document.getElementById('viberTextVideoPlatform').value = argsObj.platform;
+             }
+            if(!argsObj.buttonName){
+            }else{
+                  document.getElementById('viberTextVideoButtonName').value = argsObj.buttonName;
+            }
+            if(!argsObj.buttonUrl){  
+            }else{
+                  document.getElementById('viberTextVideoButtonUrl').value = argsObj.buttonUrl;
+            }
+            if(!argsObj.videoUrl){
+            }else{
+                  document.getElementById('viberTextVideoUrl').value = argsObj.videoUrl;
+            }
+            if(!argsObj.videoSize){  
+            }else{
+                  document.getElementById('viberTextVideoSize').value = argsObj.videoSize;
+            }
+            if(!argsObj.videoDuration){
+            }else{
+                  document.getElementById('viberTextVideoDuration').value = argsObj.videoDuration;
+            }
+            if(!argsObj.thumbnailUrl){  
+            }else{
+                  document.getElementById('viberTextVideoThumbnailUrl').value = argsObj.thumbnailUrl;
+            }
             break;
     }
     
