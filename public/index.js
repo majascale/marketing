@@ -42,7 +42,8 @@ function setViberSectionVisibility(){
            break; 
        case 'text+video':
            document.getElementById('viberTextSection').style.display='none'; 
-           document.getElementById('viberFileSection').style.display='none';  
+           document.getElementById('viberFileSection').style.display='none'; 
+           document.getElementById('viberVideoSection').style.display='none';          
            document.getElementById('viberTextVideoSection').style.display='block';          
            break;      
        default:
