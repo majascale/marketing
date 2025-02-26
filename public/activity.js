@@ -31,6 +31,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsSection').style.display='none';
             document.getElementById('viberFileSection').style.display='none';
             document.getElementById('viberVideoSection').style.display='none';
+            document.getElementById('viberTextVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
             if(!argsObj.msisdn){
@@ -66,6 +67,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsSection').style.display='none';
             document.getElementById('viberTextSection').style.display='none';
             document.getElementById('viberVideoSection').style.display='none';
+            document.getElementById('viberTextVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'file';
             if(!argsObj.msisdn){
@@ -93,6 +95,7 @@ connection.on('initActivity', function( data ) {
             document.getElementById('smsSection').style.display='none';
             document.getElementById('viberTextSection').style.display='none';
             document.getElementById('viberFileSection').style.display='none';
+            document.getElementById('viberTextVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'video';
             if(!argsObj.msisdn){
@@ -131,6 +134,12 @@ connection.on('initActivity', function( data ) {
             }else{
                  document.getElementById('viberVideoThumbnailUrl').value = argsObj.thumbnailUrl;
             }
+            break;
+         case 'viber+text+video':
+            document.getElementById('smsSection').style.display='none';
+            document.getElementById('viberTextSection').style.display='none';
+            document.getElementById('viberFileSection').style.display='none';
+            document.getElementById('viberVideoSection').style.display='none';
             break;
     }
     
