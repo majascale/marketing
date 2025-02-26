@@ -12,7 +12,7 @@ connection.on('initActivity', function( data ) {
     
     var args = JSON.stringify(payload['arguments'].execute.inArguments[0],null,2);
     var argsObj = JSON.parse(args);
-    console.log('Args: ' + args);
+    console.log('Args are: ' + args);
     
     switch(argsObj.type) {
        case 'sms':
