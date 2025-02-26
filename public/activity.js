@@ -256,9 +256,37 @@ connection.on('clickedNext', function() {
                     videoSize = document.getElementById('viberVideoSize').value;
                     videoDuration = document.getElementById('viberVideoDuration').value;
                     thumbnailUrl = document.getElementById('viberVideoThumbnailUrl').value;
+                    console.log('viberVideoMsisdn is: ' + msisdn);
+                    console.log('viberVideoFallback is: ' + fallbackText);
+                    console.log('viberVideoPlatform is: ' + platform);
+                    console.log('viberVideoButtonUrl is: ' + buttonUrl);
+                    console.log('viberVideoButtonName is: ' + buttonName);
+                    console.log('viberVideoUrl is: ' + videoUrl);
+                    console.log('viberVideoSize is: ' + videoSize);
+                    console.log('viberVideoDuration is: ' + videoDuration);
+                    console.log('viberVideoThumbnailUrl is: ' + thumbnailUrl);
                 break;
                 case 'text+video':
-                   
+                    msisdn = document.getElementById('viberTextVideoMsisdn').value;
+                    text = document.getElementById('viberTextVideoText').value;
+                    fallbackText = document.getElementById('viberTextVideoFallback').value;
+                    platform = document.getElementById('viberTextVideoPlatform').value;
+                    buttonUrl = document.getElementById('viberTextVideoButtonUrl').value;
+                    buttonName = document.getElementById('viberTextVideoButtonName').value;
+                    videoUrl = document.getElementById('viberTextVideoUrl').value;
+                    videoSize = document.getElementById('viberTextVideoSize').value;
+                    videoDuration = document.getElementById('viberTextVideoDuration').value;
+                    thumbnailUrl = document.getElementById('viberTextVideoThumbnailUrl').value;
+                    console.log('viberTextVideoMsisdn is: ' + msisdn);
+                    console.log('viberTextVideoText is: ' + text);
+                    console.log('viberTextVideoFallback is: ' + fallbackText);
+                    console.log('viberTextVideoPlatform is: ' + platform);
+                    console.log('viberTextVideoButtonUrl is: ' + buttonUrl);
+                    console.log('viberTextVideoButtonName is: ' + buttonName);
+                    console.log('viberTextVideoUrl is: ' + videoUrl);
+                    console.log('viberTextVideoSize is: ' + videoSize);
+                    console.log('viberTextVideoDuration is: ' + videoDuration);
+                    console.log('viberTextVideoThumbnailUrl is: ' + thumbnailUrl);
                 break;
             }
        break;
@@ -349,8 +377,6 @@ connection.on('clickedNext', function() {
       payload['arguments'].execute.inArguments[0].thumbnailUrl = thumbnailUrl;
   }  
 
-    
- 
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
   console.log('Update Done');  
