@@ -18,6 +18,7 @@
         }],
         "outArguments": [],
         "timeout": 100000,
+        "useJwt": true,
         "retryCount": 3,
         "retryDelay": 10000,
         "url": "https://arg-y985.onrender.com/mcargs",
