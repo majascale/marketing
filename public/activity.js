@@ -197,7 +197,15 @@ connection.on('clickedNext', function() {
                     console.log('viberFileName is: ' + fileName);
                 break;
                 case 'video':
-                    
+                    msisdn = document.getElementById('viberVideoMsisdn').value;
+                    fallbackText = document.getElementById('viberVideoFallback').value;
+                    platform = document.getElementById('viberVideoPlatform').value;
+                    buttonUrl = document.getElementById('viberVideoButtonUrl').value;
+                    buttonName = document.getElementById('viberVideoButtonName').value;
+                    videoUrl = document.getElementById('viberVideoUrl').value;
+                    videoSize = document.getElementById('viberVideoSize').value;
+                    videoDuration = document.getElementById('viberVideoDuration').value;
+                    thumbnailUrl = document.getElementById('viberVideoThumbnailUrl').value;
                 break;
                 case 'text+video':
                    
@@ -266,6 +274,32 @@ connection.on('clickedNext', function() {
   }else{
       payload['arguments'].execute.inArguments[0].fileName = fileName;
   }    
+
+  if(!videoUrl){
+      payload['arguments'].execute.inArguments[0].videoUrl = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].videoUrl = videoUrl;
+  }
+
+  if(!videoSize){
+      payload['arguments'].execute.inArguments[0].videoSize = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].videoSize = videoSize;
+  }
+
+  if(!videoDuration){
+      payload['arguments'].execute.inArguments[0].videoDuration = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].videoDuration = videoDuration;
+  }
+
+  if(!thumbnailUrl){
+      payload['arguments'].execute.inArguments[0].thumbnailUrl = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].thumbnailUrl = thumbnailUrl;
+  }  
+
+    
  
   console.log('Payload-After: ' + JSON.stringify(payload,null,2));  
   connection.trigger('updateActivity', payload);
