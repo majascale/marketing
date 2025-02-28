@@ -22,7 +22,8 @@
            <input type="text" id="smsText" required>
         </form> 
       </div>
-      <div id="viberSection"> 
+      <div id="viberSection" class="form-container"> 
+        <form>
         <label for="viberType">Viber Message Type</label>
         <select id="viberType" onChange="setViberSectionVisibility()">
           <option value="text" selected>Text</option>
@@ -31,8 +32,7 @@
           <option value="text+video">Text & Video</option>
         </select>
         <br><br>
-        <div id="viberTextSection" class="form-container"> 
-          <form>
+        <div id="viberTextSection"> 
              <label for="viberTextMsisdn">Msisdn</label>
              <input type="text" id="viberTextMsisdn" required><br><br>
              <label for="viberTextText">Text</label>
@@ -47,9 +47,8 @@
              <input type="text" id="viberTextButtonName"><br><br>
              <label for="viberTextImageUrl">Image URL</label>
              <input type="url" id="viberTextImageUrl"><br><br>
-          </form>
         </div>
-        <div id="viberFileSection" class="form-container"> 
+        <div id="viberFileSection"> 
            <label for="viberFileMsisdn">Msisdn</label>
            <input type="text" id="viberFileMsisdn" required><br><br>
            <label for="viberFileFallback">Fallback</label>
@@ -61,7 +60,7 @@
            <label for="viberFileName">File Name</label>
            <input type="text" id="viberFileName"><br><br>
         </div>
-        <div id="viberVideoSection" class="form-container"> 
+        <div id="viberVideoSection"> 
            <label for="viberVideoMsisdn">Msisdn</label>
            <input type="text" id="viberVideoMsisdn" required><br><br>
            <label for="viberVideoFallback">Fallback</label>
@@ -81,7 +80,7 @@
            <label for="viberVideoThumbnailUrl">Thumbnail URL</label>
            <input type="url" id="viberVideoThumbnailUrl" required><br><br>
         </div>
-        <div id="viberTextVideoSection" class="form-container"> 
+        <div id="viberTextVideoSection"> 
            <label for="viberTextVideoMsisdn">Msisdn</label>
            <input type="text" id="viberTextVideoMsisdn" required><br><br>
            <label for="viberTextVideoText">Text</label>
@@ -102,7 +101,8 @@
            <input type="number" id="viberTextVideoDuration" min="1" required><br><br>
            <label for="viberTextVideoThumbnailUrl">Thumbnail URL</label>
            <input type="url" id="viberTextVideoThumbnailUrl" required><br><br>
-        </div>  
+        </div>
+        </form>  
       </div>
       <br><br>
   </div>
