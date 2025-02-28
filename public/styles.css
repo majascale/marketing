@@ -28,13 +28,6 @@ label {
             margin-bottom: 5px;
 }
 
-.child {
-  display: inline-block;
-  border: 1px solid black;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-}
-
 
 input[type="text"],
 input[type="number"],
