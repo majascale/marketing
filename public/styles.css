@@ -1,16 +1,15 @@
 body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            margin: 0;
+            margin-top: 50px auto;
+            margin-bottom: 50px auto;
+            margin-left: 20px;
+            margin-right: 20px;
             padding: 0;
 }
 
 .form-container {
             width: 400px;
-            margin-top: 50px auto;
-            margin-bottom: 50px auto;
-            margin-left: 20px;
-            margin-right: 20px;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
