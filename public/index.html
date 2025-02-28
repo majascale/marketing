@@ -23,14 +23,16 @@
         </form> 
       </div>
       <div id="viberSection"> 
-        <label for="viberType">Viber Type</label>
-        <select id="viberType" onChange="setViberSectionVisibility()">
-          <option value="text" selected>Text</option>
-          <option value="file">File</option>
-          <option value="video">Video</option>
-          <option value="text+video">Text & Video</option>
-        </select>
-        <br><br>
+        <div id="viberType" class="form-container">
+           <label for="viberType">Viber Type</label>
+           <select id="viberType" onChange="setViberSectionVisibility()">
+              <option value="text" selected>Text</option>
+              <option value="file">File</option>
+              <option value="video">Video</option>
+              <option value="text+video">Text & Video</option>
+           </select>
+        </div>   
+        <br>
         <div id="viberTextSection" class="form-container"> 
            <form>  
              <label for="viberTextMsisdn">Msisdn</label>
