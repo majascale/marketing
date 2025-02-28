@@ -3,6 +3,7 @@ body {
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            text-align: center;
 }
 
 .form-container {
@@ -27,15 +28,10 @@ label {
             color: #333;
             margin-bottom: 5px;
 }
-.parent {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-}
+
 .child {
   display: inline-block;
-  border: 1px solid red;
+  border: 1px solid black;
   padding: 1rem 1rem;
   vertical-align: middle;
 }
