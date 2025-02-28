@@ -32,7 +32,4 @@ input[type="text"],
 input[type="number"],
 input[type="url"]
 
-input[type=number]::-webkit-inner-spin-button {
-    opacity: 1
-}
  
