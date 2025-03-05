@@ -25,7 +25,11 @@ connection.on('initActivity', function( data ) {
             if(!argsObj.text){ 
             }else{    
                 document.getElementById('smsText').value = argsObj.text;
-            }    
+            } 
+            if(!argsObj.sc_sms){ 
+            }else{    
+                document.getElementById('smsSC').value = argsObj.sc_sms;
+            }   
             break;
        case 'viber+text':
             document.getElementById('smsSection').style.display='none';
@@ -204,15 +208,18 @@ connection.on('clickedNext', function() {
   var videoUrl;  
   var videoSize;
   var videoDuration;
-  var thumbnailUrl;  
+  var thumbnailUrl; 
+  var sc_sms;  
     
   switch(messageType) {
        case 'sms':
             type = messageType;
             msisdn = document.getElementById('smsMsisdn').value;  
             text = document.getElementById('smsText').value;
+            sc_sms = document.getElementById('smsSC').value;
             console.log('smsMsisdn is: ' + msisdn);
             console.log('smsText is: ' + text);
+            console.log('smsSC is: ' + sc_sms);
             break;
        case 'viber':
             var viberType = document.getElementById( 'viberType' ).value;
@@ -298,7 +305,13 @@ connection.on('clickedNext', function() {
     
   payload['metaData'].isConfigured = true;  
   payload['arguments'].execute.inArguments[0].type = type;
-     
+
+  if(!sc_sms){
+      payload['arguments'].execute.inArguments[0].sc_sms = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].sc_sms = sc_sms;
+  }  
+    
   if(!msisdn){
       payload['arguments'].execute.inArguments[0].msisdn = undefined;
   }else{
