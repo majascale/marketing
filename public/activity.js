@@ -38,6 +38,10 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'text';
+            if(!argsObj.sc_viber){ 
+            }else{    
+                document.getElementById('viberTextSC').value = argsObj.sc_viber;
+            }   
             if(!argsObj.msisdn){
             }else{
                 document.getElementById('viberTextMsisdn').value = argsObj.msisdn;
@@ -209,23 +213,25 @@ connection.on('clickedNext', function() {
   var videoSize;
   var videoDuration;
   var thumbnailUrl; 
-  var sc_sms;  
+  var sc_sms; 
+  var sc_viber;  
     
   switch(messageType) {
        case 'sms':
             type = messageType;
+            sc_sms = document.getElementById('smsSC').value;
             msisdn = document.getElementById('smsMsisdn').value;  
             text = document.getElementById('smsText').value;
-            sc_sms = document.getElementById('smsSC').value;
+            console.log('smsSC is: ' + sc_sms);
             console.log('smsMsisdn is: ' + msisdn);
             console.log('smsText is: ' + text);
-            console.log('smsSC is: ' + sc_sms);
             break;
        case 'viber':
             var viberType = document.getElementById( 'viberType' ).value;
             type = messageType + '+' + viberType; 
             switch(viberType) {
                 case 'text':
+                    sc_viber = document.getElementById('viberTextSC').value;
                     msisdn = document.getElementById('viberTextMsisdn').value;
                     text = document.getElementById('viberTextText').value;
                     platform = document.getElementById('viberTextPlatform').value;
@@ -310,7 +316,13 @@ connection.on('clickedNext', function() {
       payload['arguments'].execute.inArguments[0].sc_sms = undefined;
   }else{
       payload['arguments'].execute.inArguments[0].sc_sms = sc_sms;
-  }  
+  }
+
+  if(!sc_viber){
+      payload['arguments'].execute.inArguments[0].sc_viber = undefined;
+  }else{
+      payload['arguments'].execute.inArguments[0].sc_viber = sc_viber;
+  }    
     
   if(!msisdn){
       payload['arguments'].execute.inArguments[0].msisdn = undefined;
