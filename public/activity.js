@@ -78,6 +78,10 @@ connection.on('initActivity', function( data ) {
             document.getElementById('viberTextVideoSection').style.display='none';
             document.getElementById('messageType').value = 'viber';
             document.getElementById('viberType').value = 'file';
+            if(!argsObj.sc_viber){ 
+            }else{    
+                document.getElementById('viberFileSC').value = argsObj.sc_viber;
+            }  
             if(!argsObj.msisdn){
             }else{
                 document.getElementById('viberFileMsisdn').value = argsObj.msisdn;
@@ -248,6 +252,7 @@ connection.on('clickedNext', function() {
                     console.log('viberTextimageUrl is: ' + imageUrl);
                 break;
                 case 'file':
+                    sc_viber = document.getElementById('viberFileSC').value;
                     msisdn = document.getElementById('viberFileMsisdn').value;
                     fallbackText = document.getElementById('viberFileFallback').value;
                     platform = document.getElementById('viberFilePlatform').value;
