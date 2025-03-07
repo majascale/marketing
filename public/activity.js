@@ -299,7 +299,7 @@ connection.on('clickedNext', function() {
        break;
   }  
 
-  console.log('Type is: ' + type);   
+  //console.log('Type is: ' + type);   
   var jsonObj = JSON.stringify(payload,null,2);
   console.log('Payload-Before: ' + jsonObj);
     
