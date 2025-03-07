@@ -120,7 +120,7 @@ connection.on('initActivity', function( data ) {
             }
             if(!argsObj.buttonUrl){  
             }else{
-                 document.getElementById('viberTextButtonUrl').value = argsObj.buttonUrl;
+                 document.getElementById('viberVideoButtonUrl').value = argsObj.buttonUrl;
             }
             if(!argsObj.videoUrl){
             }else{
